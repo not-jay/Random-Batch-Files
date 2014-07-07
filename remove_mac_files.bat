@@ -1,9 +1,9 @@
-%~d1
-title Mac files in USB Remover
+@%~d1
+@title Mac files in USB Remover
 @echo -----------------------------
 @echo Scanning USB for MAC leftover files and folders...
-dir /b /s /a:H | findstr /r "\<\.[^\.]*" > mac.temp
-dir /b /s /a:HD | findstr /r "\<\.[^\.]*" > macdir.temp
+dir /b /s | findstr /r "\<\.[^\.]*" > mac.temp
+dir /b /s /a:D | findstr /r "\<\.[^\.]*" > macdir.temp
 @echo -----------------------------
 @echo Deleting found files
 @for /f "tokens=*" %%a in (mac.temp) do @call :DelFile "%%a"
